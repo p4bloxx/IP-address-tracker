@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IP adress tracker</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./CSS/variables.css">
+  <link rel="stylesheet" href="./CSS/main.css">
+  <script src="./JS/script.js" defer></script>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+</head>
+<body>
+  <div class="ip-section">
+    <h1 class="clr-white">IP Address Tracker</h1>
+    <div class="input-box">
+      <input type="text" name="ip-adress" id="ip" placeholder="Search for any IP address or domain" class="clr-dark-grey b-radius15" autocomplete="off">
+      <button class="bg-black" id="submit"><img src="ASSETS/images/icon-arrow.svg" alt=""></button>
+    </div>
+    <div id="popup-info" class="bg-white b-shadow b-radius15">
+      <div>
+        <h2 class="clr-dark-grey05">IP Address</h2>
+        <p id="ip-number" class="clr-dark-grey">192.212.174.101</p>
+      </div>
+      <span class="grey-line bg-black015"></span>
+      <div class="break-word">
+        <h2 class="clr-dark-grey05">Location</h2>
+        <p id="location" class="clr-dark-grey">Brooklyn, NY 10001</p>
+      </div>
+      <span class="grey-line bg-black015"></span>
+      <div>
+        <h2 class="clr-dark-grey05">Timezone</h2>
+        <p id="time-offset" class="clr-dark-grey">UTC -05:00</p>
+      </div>
+      <span class="grey-line bg-black015"></span>
+      <div class="break-word">
+        <h2 class="clr-dark-grey05">ISP</h2>
+        <p id="isp" class="clr-dark-grey">SpaceX Starlink</p>
+      </div>
+    </div>
+  </div>
+  <div class="map-section">
+    <div id="map"></div>
+  </div>
+</body>
+</html>

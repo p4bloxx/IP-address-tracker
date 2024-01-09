@@ -1,0 +1,160 @@
+@use 'variables' as *;
+
+//Block elements
+ 
+h1{
+  font-size: clamp($fs-26, 5vw, $fs-32);
+  letter-spacing: -0.232px;
+  font-weight: 500;
+  line-height: 1.875rem;
+  margin-block-end: 1.875rem;
+}
+
+h2{
+  font-size: clamp($fs-10, 3vw, $fs-12);
+  letter-spacing: 1.458px;
+  margin-block-end: 0.4375rem;
+}
+
+p{
+  font-size: clamp($fs-20, 5vw, $fs-26);
+  font-weight: 500;
+  letter-spacing: -0.179px;
+  line-height: 1.5rem;
+}
+
+.input-box{
+  @include flex-row;
+  position: relative;
+}
+
+input{
+  font-size: $fs-12;
+  font-weight: 400;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  width: 100%;
+  height: 3.625rem;
+  padding-inline-start: 1.5rem;
+    @media screen and (min-width: 767px) {
+      font-size: $fs-18;
+    }
+}
+
+#submit{
+  width: 3.625rem;
+  height: 3.75rem;
+  display: grid;
+  place-items: center;
+  position: absolute;
+  right: 0;
+  border-top-right-radius: $fs-15;
+  border-bottom-right-radius: $fs-15;
+}
+
+@media screen and (min-width: 767px) {
+  p{
+    line-height: 1.875rem;
+  }
+
+  h2{
+    margin-block-end: 0.875rem;
+  }
+}
+
+.ip-section{
+    background: url('../ASSETS/images/pattern-bg-mobile.png') no-repeat;
+    background-size: cover;
+    padding: $fs-26 $fs-24;
+    height: 30vh;
+    height: 30dvh;
+  
+      #popup-info{
+        position: absolute;
+        top: 10.4375rem;
+        @include flex-col;
+        padding: $fs-26 $fs-24 $fs-24 $fs-24;
+        left: 0;
+        right: 0;
+        margin-inline: $fs-24;
+        gap: $fs-24;
+        transition: transform 0.3s ease;
+        z-index: 10;
+      }
+  
+      .grey-line{
+        display: none;
+      }
+  
+      @media screen and (min-width: 767px) {
+        &{
+          padding-block-start: $fs-32;
+          padding-inline: 4rem;
+        }
+
+        #popup-info{
+          margin-inline: 4rem;
+          top: 12.5rem;
+        }
+  
+        .grey-line{
+          display: block;
+          width: 1px;
+        }
+      }
+
+      @media screen and (min-width: 998px) {
+
+        &{
+          padding-inline: 0;
+          background: url('../ASSETS/images/pattern-bg-desktop.png') no-repeat;
+          background-size: cover;
+        }
+
+        .input-box{
+          max-width: 34.6875rem;
+          margin-inline: auto;
+        }
+
+        #popup-info{
+          max-width: 55rem;
+          @include flex-row;
+          justify-content: start;
+          align-items: start;
+          text-align: left;
+          padding: 2.3125rem 0 2.3125rem $fs-32;
+          margin-inline: auto;
+          gap: 0;
+             .break-word > p {
+                max-width: 10ch;
+            }
+
+            .grey-line{
+              height: 4.6875rem;
+              margin-inline: 3.75rem 2rem;
+            }
+        }
+      }
+
+      @media screen and (min-width: 1200px) {
+
+        #popup-info{
+          max-width: 69.375rem;
+        }
+      }
+}
+  
+.popup-active{
+  transform: translateY(0%);
+}
+ 
+#map{
+  height: 70vh;
+  height: 70dvh;
+  z-index: 0;
+}
+
+//Zoom control Leaflet (map)
+.leaflet-top{
+  display: none;
+}

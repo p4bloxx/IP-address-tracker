@@ -194,6 +194,9 @@ input {
   height: 30vh;
   height: 30dvh;
 }
+.ip-section .grey-line {
+  display: none;
+}
 .ip-section #popup-info {
   position: absolute;
   top: 10.4375rem;
@@ -206,11 +209,9 @@ input {
   right: 0;
   margin-inline: 1.5rem;
   gap: 1.5rem;
-  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, opacity 0.2s linear;
   z-index: 10;
-}
-.ip-section .grey-line {
-  display: none;
+  pointer-events: all;
 }
 @media screen and (min-width: 767px) {
   .ip-section {
@@ -262,6 +263,11 @@ input {
   .ip-section #popup-info {
     max-width: 69.375rem;
   }
+}
+
+.opened {
+  opacity: 0;
+  pointer-events: none;
 }
 
 .popup-active {

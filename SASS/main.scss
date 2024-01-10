@@ -62,13 +62,18 @@ input{
   }
 }
 
+
 .ip-section{
     background: url('../ASSETS/images/pattern-bg-mobile.png') no-repeat;
     background-size: cover;
     padding: $fs-26 $fs-24;
     height: 30vh;
     height: 30dvh;
-  
+
+      .grey-line{
+        display: none;
+      }
+
       #popup-info{
         position: absolute;
         top: 10.4375rem;
@@ -78,12 +83,9 @@ input{
         right: 0;
         margin-inline: $fs-24;
         gap: $fs-24;
-        transition: transform 0.3s ease;
+        transition: transform 0.3s ease, opacity 0.2s linear;
         z-index: 10;
-      }
-  
-      .grey-line{
-        display: none;
+        pointer-events: all;
       }
   
       @media screen and (min-width: 767px) {
@@ -103,6 +105,7 @@ input{
         }
       }
 
+      
       @media screen and (min-width: 998px) {
 
         &{
@@ -143,7 +146,12 @@ input{
         }
       }
 }
-  
+
+.opened{
+  opacity: 0;
+  pointer-events: none;
+}
+
 .popup-active{
   transform: translateY(0%);
 }

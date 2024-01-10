@@ -4,6 +4,7 @@ const timeOffset = document.querySelector('#time-offset')
 const provider = document.querySelector('#isp')
 const sendIp = document.getElementById('ip');
 const submit = document.getElementById('submit');
+let popup = document.getElementById('popup-info');
 
 function startIp(userIp, newDomain){
 
@@ -88,3 +89,8 @@ function sendCoordinate(container){
 }
 
 startIp('', '');
+
+sendIp.addEventListener('click', () => {
+  popup.classList.toggle("opened")
+  console.log('ciao')
+});
